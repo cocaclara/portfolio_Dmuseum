@@ -1,0 +1,505 @@
+@charset "UTF-8";
+
+*{
+  margin: 0; padding: 0; box-sizing: border-box !important;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  font-family: "Rubik",'Noto Sans KR', sans-serif; /*영문,한글*/
+}
+html{overflow-x: hidden;}
+/*body::-webkit-scrollbar {*/
+/*display: none;*/ /* Chrome, Safari, Opera */
+/*-ms-overflow-style: none;*/ /* IE, Edge */
+/* scrollbar-width: none;*/ /* Firefox */
+/*}*/
+ul,li{list-style: none;}
+a{text-decoration: none; color: #333;}
+
+#wrap{
+  width: 100%;
+  height: 100%;
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+}
+.none{ display: none; }
+.h2{display: none;}
+
+/*헤더*/
+header{
+  width: 100%;
+  height: 2.5rem;
+  position: absolute; z-index: 1;
+  top:0;
+}
+header ul.hnb{
+  position: absolute; right: 3.5%;
+}
+header ul.hnb>li{ display: inline-block; }
+header ul.hnb>li>a{
+  padding: 10px; box-sizing: border-box;
+  margin-left: 15px;
+  color: #111;
+  font-size: 13px;
+  /* font-weight: bold; */
+  line-height: 40px;
+}
+
+/* 네비게이션 */
+nav{
+  width: 100%;
+  /* height: 100vh; */
+  height: 70px;
+  margin-top: 2.5rem;
+}
+nav>div.main-menu-area{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  /* background: rgba(255,255,255,0.1); */
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  position: absolute; z-index: 1; top: 2.5rem; left: 0;
+}
+nav>div.main-menu-area.sticky{
+  /* margin-top: 2.5rem; */
+  background-color: #fff;
+  box-sizing: border-box;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: fixed; top: 0;
+  z-index: 99999;
+}
+nav>div.main-menu-area.sticky a{
+  color: #111;
+}
+nav>div.main-menu-area.sticky ion-icon{
+  color: #111;
+}
+nav>div.main-menu-area>ul.side-icon>li.menu-outline{
+  display: none;
+}
+nav>div.main-menu-area.sticky>ul.side-icon>li.menu-outline{
+  display: inline-block;
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: 10px;
+}
+nav>div.main-menu-area.sticky>h1>a{
+  background-image: url("../img/logo/d_logo_b.png");
+}
+nav h1>a{
+  display: block;
+  width: 45px; height: 45px;
+  background-image: url("../img/logo/d_logo_b.png");
+  background-repeat: no-repeat;
+  background-size: 45px;
+  overflow: hidden;
+  position: absolute; top: 50%; left: 60px;z-index: 1;
+  transform: translateY(-50%);
+}
+nav h1>a>span{opacity: 0;}
+nav ul.gnb{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100%;
+}
+nav ul.gnb>li{ display: inline-block; }
+nav ul.gnb>li>a{
+  display: block;
+  padding: 25px 35px;
+  color: #111;
+  font-weight: bold;
+}
+nav ul.gnb>li.on>a::after{
+  display: block;
+  margin-top: 23px;
+  border-bottom: 0.15rem solid #111;
+  content: '';
+}
+
+nav ul.side-icon{
+  position: absolute; top: 50%; right: 60px;
+  transform: translateY(-50%);
+}
+nav ul.side-icon>li{ display: inline-block; }
+nav ul.side-icon>li>a{
+  display: block;
+  margin-left: 15px;
+  box-sizing: border-box;
+}
+nav ul.side-icon>li>a>ion-icon{
+  color: #111;
+  font-size: 28px;
+  --ionicon-stroke-width: 40px;
+}
+
+/* 서브네비 */
+div.submenu{
+  display: none;
+  z-index: 10;
+}
+.submenu .sub ul>li>a{
+  display: block;
+  font-size: 17px;
+  color: #999;
+  padding: 10px 0;
+}
+.submenu>div>ul>li>a:hover{
+  color: #111;
+}
+.submenu1{
+  position: relative; top:69px;
+  /*left: -50px;*/
+  background: #fff;
+  width: 100vw;
+  height: 330px;
+  display: flex;
+}
+.submenu1 .sub1{
+  display: flex;
+  margin: 0 auto;
+  width: 1300px;
+}
+.submenu1 .sub1 div.hr{
+  margin-top: 45px;
+  width: 2px;
+  height: 250px;
+  background: #eee;
+}
+.submenu1 .sub1 ul{
+  padding-top: 50px;
+  height: 100%;
+}
+.submenu1 .sub1 ul.sub1-text{
+  flex:2;
+}
+.submenu1 .sub1 ul.info{
+  flex:7;
+  text-align: left;
+  padding-left: 30px;
+  display: flex;
+}
+.submenu1 .sub1 ul.info>li{
+  display: inline-block;
+  flex: 1;
+}
+.submenu1 ul.info>li.d-museum>img.s-logo{
+  width: 90px;
+}
+.submenu1 ul.info>li.daelim-museum>img.s-logo{
+  margin-top: 5px;
+  width: 130px;
+}
+.submenu1 ul.info>li.guseulmoa>img.s-logo{
+  margin-top: -12px;
+  width: 60px;
+}
+.submenu1 ul.info .photo{
+  padding: 20px 0;
+}
+.submenu1 ul.info .p1>span{
+  color: #666;
+}
+.submenu1 ul.info .p2{
+  color: #888;
+}
+.submenu1 ul.info .sub2>ul>li{
+  display: inline-block;
+}
+.submenu2{
+  position: relative; top:69px; left: -50px;
+  background: #fff;
+  width: 100vw;
+  height: 70px;
+  line-height: 70px;
+  /* display: flex; */
+}
+.submenu2>.sub{
+  position: absolute;left: 50%;
+  transform: translateX(-50%);
+}
+.submenu2 li{
+  display: inline-block;
+}
+.submenu2>.sub>ul>li>a{
+  box-sizing: border-box;
+  margin: -10px 30px;
+}
+.submenu2 .sub2>ul>li.on>a{
+  color: #111;
+}
+
+/* 메인 */
+main>.sub-top-area-current{
+  position: relative;
+  width: 100%;
+  height: 262px;
+}
+main>.sub-top-area-current>h2{
+  position: absolute;
+  font-size: 4.5rem;
+  font-weight: lighter;
+  padding: 70px 0 100px 0;
+}
+main>.sub-top-area-current>h2::before{
+  display: inline-block;
+  content: "";
+  width: 7vw;
+  height: 2px;
+  background-color: #111;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+main>.sub-top-area-current>ul.current-menu{
+  position: absolute; top: 50%;right: 5%;
+  transform: translateY(-50%);
+  display: flex;
+  width: 260px;
+}
+main>.sub-top-area-current>ul.current-menu>li{
+  font-size: 15px;
+  line-height: 16px;
+  color: #aaa;
+  padding: 0 10px;
+}
+main>.sub-top-area-current>ul.current-menu>li:nth-child(3){
+  color: #555;
+}
+main>.sub-top-area-current>ul.current-menu>li ion-icon{
+  line-height: 16px;
+  color: #aaa;
+}
+main>.sub-top-area-current>ul.current-menu>li.side-text::before{
+  content: '';
+  margin-right: 15px;
+  border-left: 2px solid #ccc;
+}
+main .navi{
+  width: 100vw;
+  border-bottom: 1px solid #ccc;
+}
+main .navi>ul{
+  display: flex;
+  justify-content: center;
+}
+main .navi>ul>li{
+  display: inline-block;
+  color: #999;
+  cursor: pointer;
+  padding: 20px 30px 0 30px;
+  font-size: 19px;
+}
+main .navi>ul>li.on{
+  color: #111;
+}
+main .navi>ul>li.on::after{
+  display: block;
+  margin-top: 10px;
+  border-bottom: 0.25rem solid #111;
+  content: '';
+}
+
+/* 섹션 */
+section{
+  position: relative;
+  padding-top: 120px;
+}
+article{
+  display: none;
+  margin-bottom: 8%;
+  min-height: 170px;
+}
+article.on{display: block;}
+article h2{display: none;}
+
+article div.back{
+  display: flex;
+  justify-content: space-between;
+
+  width: 80rem;
+  margin: 0 auto;
+}
+article div.back div.text{
+  text-align: left;
+  margin-top: 9%;
+}
+article div.back div.text p.textBox{
+  /* width: 100px; */
+  height: 35px;
+  background-color: rgb(0, 0, 0);
+  line-height: 35px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #fff;
+}
+article div.back div.text p.title{
+  font-size: 65px;
+  line-height: 90px;
+  margin-bottom: 35px;
+  margin-top: 9%;
+  font-weight: bold;
+}
+article div.back div.text span.period{
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+article div.back div.text span i{
+  margin-left: 20px;
+  font-size: 30px;
+  vertical-align: middle;
+}
+article div.back div.text>div{
+  margin-top: 10%;
+}
+article div.back div.text button{
+  display: inline-block;
+  width: 170px;
+  height: 55px;
+  margin-right: 35px;
+  border: 2px solid #111;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+article .btn1{
+  background: transparent;
+}
+article div.back div.text button.btn1:hover{
+  background-color: #aaa;
+  border: 0;
+  color: #fff;
+}
+article .btn2{
+  background: #111;
+  color: #fff;
+}
+article div.back div.text button.btn2:hover{
+  background-color: #fff;
+  color: #111;
+}
+article div.back div.exhibition-img{
+  width: 40%;
+}
+article div.back div.exhibition-img img{
+  width: 100%;
+}
+
+article.sec1 div.back div.text p.textBox{
+  width: 100px;
+}
+article.sec2 div.back{
+  display: block;
+}
+article.sec2 p{
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+article.sec2 span{
+  font-size: 17px;
+  color: #777;
+}
+article.sec3 div.back{
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+article.sec3 div.back div.text{
+  margin-left: 9%;
+}
+article.sec3 div.back div.text p.textBox{
+  width: 120px;
+}
+
+footer{
+  width: 100%;
+  /* min-width:  0.8125rem; */
+  position: absolute;
+  background-color: #111;
+  color: #999;
+  text-align: left;
+}
+footer .strong{
+  color: #eee;
+}
+footer .strong a{
+  color: #eee;
+}
+footer .footer-wrap{
+  padding: 3% 9%;
+}
+footer .footer-wrap>ul{
+  display: flex;
+  font-size: 0.8725rem;
+}
+footer .footer-wrap>ul>li{
+  flex: 1;
+  padding-right: 7%;
+  line-height: 24px;
+}
+footer>div>ul>li>img{
+  width: 5.5rem;
+}
+footer .footer-wrap ul.sns>li{
+  display: inline-block;
+  padding-right: 30px;
+}
+footer .footer-wrap>ul>li.sites{
+  padding: 0;
+}
+footer .footer-wrap .site>li{
+  line-height: 40px;
+}
+footer div.footer-wrap>ul>.strong>ul.sns>li>a>i{
+  font-size: 20px;
+}
+footer li i{
+  margin-left: 2px;
+}
+footer>div>.hr{
+  margin: 3% 0;
+  width: 100%; height: 1px;
+  background-color: #333;
+}
+footer div.last ul{
+  margin-bottom: 2%;
+  font-size: 0.8125rem;
+}
+footer div.last p{
+  font-size: 0.8125rem;
+}
+footer div.last ul:nth-child(2){
+  margin-bottom: initial;
+}
+footer div.last li{
+  display: inline-block;
+  font-size: 0.8125rem;
+  line-height: 24px;
+}
+footer div.last li>a{ color: #999; }
+footer div.last li>a>strong{ color: #eee; }
+footer div.last li:after{
+  content: "  │  ";
+}
+footer div.last li:last-child:after{
+  content: "";
+}
+
+/* 탑버튼 */
+.top-btn{
+  border: 0;
+  background-color: transparent;
+  width: 50px;
+
+  position: fixed; right: 30px; bottom: 35px;
+  z-index: 9999999;
+  cursor: pointer;
+}
+.top-btn img{
+  width: 50px;
+}
